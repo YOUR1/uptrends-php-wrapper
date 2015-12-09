@@ -29,7 +29,7 @@ echo print_r($json, true);
 echo '</pre>';
 ```
 
-#### POST calls
+#### POST/PUT calls
 ```php
 $postCall = $uptrends->postProbes(array(
   'postfields' => array(
@@ -39,3 +39,11 @@ $postCall = $uptrends->postProbes(array(
   )
 ));
 ```
+
+#### DELETE calls
+```php
+$deleteCall = $uptrends->deleteProbes(array(
+  'prefix' => 'Guid'
+));
+```
+
