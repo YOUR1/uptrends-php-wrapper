@@ -47,3 +47,8 @@ $deleteCall = $uptrends->deleteProbes(array(
 ));
 ```
 
+#### Used array keys
+* prefix (prefix for the URL)
+* postfields (fields to be posted)
+* arguments (parameters in the URL)
+
