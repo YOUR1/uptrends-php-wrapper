@@ -89,13 +89,21 @@ class Uptrends {
 			$url .= '/' . $additional_data['prefix'];
 				
 		}
+		
+		// Add URL parameters if necessary
+		if (!empty($additional_data['arguments'])) {
+			
+			$url .= '?';
+			$url .= $additional_data['arguments'];
+			
+		}
 
 		// Get request
 		if( strstr($name, 'get')) {
 				
 			$result = $this->getRestCall($url);
 				
-			// Handle post
+		// Handle post
 		} elseif (strstr($name, 'post') || strstr($name, 'put')) {
 				
 			// Validate postfields
@@ -115,12 +123,12 @@ class Uptrends {
 
 			}
 				
-			// Handle DELETE request
+		// Handle DELETE request
 		} elseif (strstr($name, 'DELETE')) {
 				
 			$result = $this->getRestCall($url, null, self::METHOD_DELETE);
 
-			// Unkown function called
+		// Unkown function called
 		} else {
 				
 			throw new Exception("Invalid function called: $name");
