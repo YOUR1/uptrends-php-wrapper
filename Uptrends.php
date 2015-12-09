@@ -27,7 +27,7 @@ class Uptrends {
 	const METHOD_DELETE = 4;
 
 	// Rest service location
-	const REST_SERVICE = 'http://api.uptrends.com/';
+	const REST_SERVICE = 'https://api.uptrends.com/';
 	const REST_VERSION = 'v3';
 
 	/** @var boolean **/
