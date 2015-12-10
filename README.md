@@ -17,16 +17,50 @@ All post, delete, put, and get requests are handled by the magical function __ca
 See full API documentation on https://www.uptrends.com/support/kb/api/documentation
 
 ### Examples
+Class initializer:
+```php
+$uptrends = new Uptrends(array(
+	'username' => 'Username', 
+	'password' => 'Password'
+));
+```
+
 #### GET calls
+##### List probes
 ```php
 $probes = $uptrends->getProbes();
+```
 
-// Decode JSON result
-$json = json_decode($probes);
+##### Probe statistics
+```php
+$today = new DateTime('now');
+$lastYear = $today->modify('-1 year');
+$format = 'Y/m/d';
 
-echo '<pre>'
-echo print_r($json, true);
-echo '</pre>';
+$probeStatistics = $uptrends->getProbes(array(
+  'prefix' => 'GUID/statistics',
+  'arguments' => array(
+		'start' => $lastYear->format($format),
+		'end' => $today->format($format),
+		'dimension' => 'Week'
+	)
+));
+```
+
+##### Probegroup statistics:
+```php
+$today = new DateTime('now');
+$lastYear = $today->modify('-1 year');
+$format = 'Y/m/d';
+
+$probes = $uptrends->getProbegroups(array(
+  'prefix' => '7bdb4e670a4444099b8aec20ed24c45a/statistics',
+	'arguments' => array(
+		'start' => $lastYear->format($format),
+		'end' => $today->format($format),
+		'dimension' => 'Week'
+	)
+));
 ```
 
 #### POST/PUT calls
