@@ -17,14 +17,6 @@ All post, delete, put, and get requests are handled by the magical function __ca
 See full API documentation on https://www.uptrends.com/support/kb/api/documentation
 
 ### Examples
-Class initializer:
-```php
-$uptrends = new Uptrends(array(
-	'username' => 'Username', 
-	'password' => 'Password'
-));
-```
-
 #### GET calls
 ##### List probes
 ```php
