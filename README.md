@@ -54,7 +54,7 @@ $lastYear = $today->modify('-1 year');
 $format = 'Y/m/d';
 
 $probes = $uptrends->getProbegroups(array(
-  'prefix' => '7bdb4e670a4444099b8aec20ed24c45a/statistics',
+  'prefix' => 'GUID/statistics',
 	'arguments' => array(
 		'start' => $lastYear->format($format),
 		'end' => $today->format($format),
@@ -86,3 +86,6 @@ $deleteCall = $uptrends->deleteProbes(array(
 * postfields (fields to be posted)
 * arguments (parameters in the URL)
 
+
+# Authors
+Youri van den Bogert <yvdbogert@archixl.nl>
