@@ -91,10 +91,10 @@ class Uptrends {
 		}
 		
 		// Add URL parameters if necessary
-		if (!empty($additional_data['arguments'])) {
+		if (!empty($additional_data['parameters'])) {
 			
 			$url .= '?';
-			$url .= $additional_data['arguments'];
+			$url .= $additional_data['parameters'];
 			
 		}
 
@@ -150,7 +150,7 @@ class Uptrends {
 
 		$prefix = null;
 		$postfields = array();
-		$urlArguments = array();
+		$urlParams = array();
 
 		foreach($arg as $argKey => $argData) {
 			if (is_array($argData)) {
@@ -160,7 +160,7 @@ class Uptrends {
 					} elseif ($dataName == 'postfields') {
 						$postfields = $dataVal;
 					} elseif ($dataName == 'arguments') {
-						$urlArguments = http_build_query($dataVal);
+						$urlParams = http_build_query($dataVal);
 					}
 				}
 			}
@@ -169,7 +169,7 @@ class Uptrends {
 		return array(
 				'prefix' => $prefix,
 				'postfields' => $postfields,
-				'arguments' => $urlArguments
+				'parameters' => $urlParams
 		);
 
 	}
