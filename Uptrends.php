@@ -159,7 +159,7 @@ class Uptrends {
 						$prefix = $dataVal;
 					} elseif ($dataName == 'postfields') {
 						$postfields = $dataVal;
-					} elseif ($dataName == 'arguments') {
+					} elseif ($dataName == 'parameters') {
 						$urlParams = http_build_query($dataVal);
 					}
 				}
