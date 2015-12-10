@@ -88,4 +88,4 @@ $deleteCall = $uptrends->deleteProbes(array(
 
 
 # Authors
-Youri van den Bogert <yvdbogert@archixl.nl>
+* Youri van den Bogert (<yvdbogert@archixl.nl>)
