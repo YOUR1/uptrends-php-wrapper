@@ -31,7 +31,7 @@ $format = 'Y/m/d';
 
 $probeStatistics = $uptrends->getProbes(array(
   'prefix' => 'GUID/statistics',
-  'arguments' => array(
+  'parameters' => array(
 		'start' => $lastYear->format($format),
 		'end' => $today->format($format),
 		'dimension' => 'Week'
@@ -47,7 +47,7 @@ $format = 'Y/m/d';
 
 $probes = $uptrends->getProbegroups(array(
   'prefix' => 'GUID/statistics',
-	'arguments' => array(
+	'parameters' => array(
 		'start' => $lastYear->format($format),
 		'end' => $today->format($format),
 		'dimension' => 'Week'
@@ -76,7 +76,7 @@ $deleteCall = $uptrends->deleteProbes(array(
 #### Used array keys
 * prefix (prefix for the URL)
 * postfields (fields to be posted)
-* arguments (parameters in the URL)
+* parameters (parameters in the URL)
 
 
 # Authors
